@@ -5,13 +5,27 @@
     "AssetReferences": [],
     "Entities": [{
         "Components": [{
+            "$type": "IsoFlight.GameConfig, iso_flight",
+            "TitleScn": {
+                "SceneGuid": "00000000000000000000000000000000"
+            },
+            "MainScn": {
+                "SceneGuid": "6df51742e7694f9a9bd1d07d75839f26"
+            },
+            "ResultScn": {
+                "SceneGuid": "00000000000000000000000000000000"
+            },
+            "BlockScn": {
+                "SceneGuid": "713af3638a06445b92832e5bba3be372"
+            }
+        }, {
             "$type": "Unity.Entities.EntityGuid, Unity.Entities",
             "a": 14955204075212128622,
             "b": 12715472964590725551
         }, {
             "$type": "Unity.Tiny.Core2D.DisplayInfo, Unity.Tiny.Core2D",
-            "width": 540,
-            "height": 960,
+            "width": 750,
+            "height": 1110,
             "autoSizeToFrame": true,
             "orientation": 0,
             "renderMode": 0
@@ -20,6 +34,10 @@
             "Elements": [{
                 "SceneReference": {
                     "SceneGuid": "6df51742e7694f9a9bd1d07d75839f26"
+                }
+            }, {
+                "SceneReference": {
+                    "SceneGuid": "713af3638a06445b92832e5bba3be372"
                 }
             }]
         }, {
@@ -35,6 +53,8 @@
                 "StableTypeHash": 7960064150805274675
             }, {
                 "StableTypeHash": 12662904853204722592
+            }, {
+                "StableTypeHash": 16662064023107963892
             }]
         }, {
             "$type": "Unity.Authoring.Core.ConfigurationTag, Unity.Authoring.Core"
