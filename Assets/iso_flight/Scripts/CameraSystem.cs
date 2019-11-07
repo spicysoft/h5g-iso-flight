@@ -12,6 +12,7 @@ namespace IsoFlight
 		protected override void OnUpdate()
 		{
 			float vsize = 0;
+			float hsize = 0;
 
 			Entities.ForEach( ( ref CameraInfo info, ref Camera2D camera ) => {
 				if( !info.Initialized ) {
@@ -29,10 +30,11 @@ namespace IsoFlight
 
 					camera.halfVerticalSize = 500f * frameAsp / rectAsp;
 
-					vsize = rectAsp;
+					vsize = frameW;
+					hsize = frameH;
 
 					//Debug.LogFormat( "----	halfvert {0}", camera.halfVerticalSize );
-					Debug.LogFormat( "----	frame {0} buffer {1}", displayInfo.frameHeight, displayInfo.framebufferHeight );
+					//Debug.LogFormat( "----	frame {0} buffer {1}", displayInfo.frameWidth, displayInfo.framebufferHeight );
 
 					info.Initialized = true;
 					return;
@@ -40,12 +42,11 @@ namespace IsoFlight
 			} );
 
 
-			if( vsize > 0 ) {
+			/*if( vsize > 0 ) {
 				Entities.WithAll<DebTextTag>().ForEach( ( Entity entity ) => {
-					EntityManager.SetBufferFromString<TextString>( entity, vsize.ToString() );
+					EntityManager.SetBufferFromString<TextString>( entity, vsize.ToString()+", "+hsize.ToString() );
 				} );
-
-			}
+			}*/
 		}
 	}
 }

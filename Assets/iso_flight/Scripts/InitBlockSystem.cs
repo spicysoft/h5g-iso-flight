@@ -5,7 +5,8 @@ using Unity.Tiny.Core2D;
 
 namespace IsoFlight
 {
-	public class InitBallSystem : ComponentSystem
+	[UpdateAfter( typeof( BlockGenerateSystem ) )]
+	public class InitBlockSystem : ComponentSystem
 	{
 		Random _random;
 		private int cnt = 0;
@@ -20,7 +21,7 @@ namespace IsoFlight
 				}
 			} );
 
-			Entities.ForEach( ( ref BlockInfo block, ref Translation trans, ref NonUniformScale scl ) => {
+			Entities.ForEach( ( ref BlockInfo block, ref WorldPosInfo info, ref Translation trans, ref NonUniformScale scl ) => {
 				if( !block.IsActive )
 					return;
 				if( block.Initialized )
@@ -46,9 +47,9 @@ namespace IsoFlight
 					iz = cnt / 20;
 				}
 
-				block.Wpos.x = (ix - 2) * 60f;
-				block.Wpos.y = iy * 50f;
-				block.Wpos.z = (iz + 1) * 60f;
+				info.Wpos.x = (ix - 2) * 60f;
+				info.Wpos.y = iy * 50f;
+				info.Wpos.z = (iz + 1) * 60f;
 
 				cnt++;
 

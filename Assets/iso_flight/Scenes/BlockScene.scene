@@ -22,6 +22,9 @@
             "IsActive": true,
             "Wpos": {}
         }, {
+            "$type": "IsoFlight.WorldPosInfo, iso_flight",
+            "Wpos": {}
+        }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core"
         }, {
             "$type": "Unity.Entities.EntityGuid, Unity.Entities",
@@ -59,17 +62,15 @@
         }, {
             "$type": "Unity.Tiny.Core.EntityName, Unity.Tiny.Core",
             "Elements": [{
-                "c": "S"
+                "c": "B"
             }, {
-                "c": "p"
+                "c": "l"
             }, {
-                "c": "r"
+                "c": "o"
             }, {
-                "c": "i"
+                "c": "c"
             }, {
-                "c": "t"
-            }, {
-                "c": "e"
+                "c": "k"
             }]
         }, {
             "$type": "Unity.Authoring.Core.ComponentOrder, Unity.Authoring.Core",
@@ -95,6 +96,8 @@
                 "StableTypeHash": 147127668789581756
             }, {
                 "StableTypeHash": 9102560848337825073
+            }, {
+                "StableTypeHash": 8005454894042558070
             }]
         }]
     }]
