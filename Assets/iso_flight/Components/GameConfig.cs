@@ -10,6 +10,6 @@ namespace IsoFlight
 		public SceneReference ResultScn;
 		public SceneReference BlockScn;
 		//public SceneReference ScoreScn;
-		//public SceneReference TimeOverScn;
+		public SceneReference GameOverScn;
 	}
 }

@@ -17,6 +17,9 @@
             },
             "BlockScn": {
                 "SceneGuid": "713af3638a06445b92832e5bba3be372"
+            },
+            "GameOverScn": {
+                "SceneGuid": "00000000000000000000000000000000"
             }
         }, {
             "$type": "Unity.Entities.EntityGuid, Unity.Entities",
@@ -55,6 +58,8 @@
                 "StableTypeHash": 12662904853204722592
             }, {
                 "StableTypeHash": 16662064023107963892
+            }, {
+                "StableTypeHash": 6777475419181991173
             }]
         }, {
             "$type": "Unity.Authoring.Core.ConfigurationTag, Unity.Authoring.Core"

@@ -1,9 +1,8 @@
 using Unity.Entities;
-using Unity.Mathematics;
 
 namespace IsoFlight
 {
-	public struct PlayerInfo : IComponentData
+	public struct HeightMarkInfo : IComponentData
 	{
 		public bool Initialized;
 	}

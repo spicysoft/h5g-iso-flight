@@ -28,7 +28,7 @@ namespace IsoFlight
 					float rectH = 1110f;
 					float rectAsp = rectH / rectW;
 
-					camera.halfVerticalSize = 500f * frameAsp / rectAsp;
+					camera.halfVerticalSize *= frameAsp / rectAsp;
 
 					vsize = frameW;
 					hsize = frameH;
