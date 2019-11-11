@@ -13,7 +13,7 @@ namespace IsoFlight
 		private readonly float s_sn = math.sin( -45f * math.PI / 180f );
 		private readonly float s_cs = math.cos( -45f * math.PI / 180f );
 		private const float s_xbias = 1f;
-		private const float s_ybias = 9f / 16f;		// 帳尻合わせ.
+		private const float s_ybias = 1f / 1.73205f; // 1f/sqrt(3f);
 
 
 		protected override void OnUpdate()
@@ -21,13 +21,14 @@ namespace IsoFlight
 			Entities.ForEach( ( ref WorldPosInfo info, ref Translation trans, ref LayerSorting layer ) => {
 
 				float3 spos = CalcScreenPos( info.Wpos );
+				trans.Value = spos;
 
 				// プライオリティ.
-				float order = 500f + info.Wpos.x - info.Wpos.z;		// マイナスにならないように500たす.
-				order += info.Wpos.y * 2f;	// yの重みあげる.
-				layer.order = (short)order;
-
-				trans.Value = spos;
+				if( !info.DontCalcOrder ) {
+					float order = 500f + info.Wpos.x - info.Wpos.z;     // マイナスにならないように500たす.
+					order += info.Wpos.y * 2f;  // yの重みあげる.
+					layer.order = (short)order;
+				}
 			} );
 		}
 
