@@ -35,7 +35,7 @@ namespace IsoFlight
 			} );
 
 			if( reqGen ) {
-				for( int i = 0; i < 18; i++ ) {
+				for( int i = 0; i < 6; i++ ) {
 					bool recycled = false;
 					Entities.ForEach( ( Entity entity, ref BlockInfo block ) => {
 						if( !recycled ) {

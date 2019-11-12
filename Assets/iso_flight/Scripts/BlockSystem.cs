@@ -15,7 +15,7 @@ namespace IsoFlight
 
 			Entities.ForEach((ref BlockInfo block, ref WorldPosInfo info) => {
 				
-				//info.Wpos.z -= 60f * dt;
+				info.Wpos.z -= 60f * dt;
 			});
 		}
 

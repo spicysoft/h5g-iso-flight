@@ -65,7 +65,7 @@ namespace IsoFlight
 				// 移動.
 				//info.Wpos.z += 40f*deltaTime;
 
-				float spd = 40f * deltaTime;
+				float spd = 60f * deltaTime;
 
 				if( btnUpOn ) {
 					info.Wpos.y += spd;

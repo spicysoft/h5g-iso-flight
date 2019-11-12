@@ -49,7 +49,7 @@ namespace IsoFlight
 
 				info.Wpos.x = (ix - 2) * 60f;
 				info.Wpos.y = iy * 50f;
-				info.Wpos.z = (iz + 0) * 60f;
+				info.Wpos.z = (iz + 2) * 60f;
 
 				cnt++;
 
