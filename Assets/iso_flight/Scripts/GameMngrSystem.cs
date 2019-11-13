@@ -7,6 +7,7 @@ using Unity.Tiny.Scenes;
 using Unity.Tiny.Text;
 using Unity.Tiny.UILayout;
 using Unity.Tiny.Core2D;
+using Unity.Tiny.UIControls;
 
 namespace IsoFlight
 {
@@ -31,13 +32,27 @@ namespace IsoFlight
 			int score = 0;
 			bool reqGameOver = false;
 			bool reqResult = false;
+			bool btnDebOn = false;
+
+			Entities.WithAll<BtnDebTag>().ForEach( ( ref PointerInteraction pointerInteraction ) => {
+				if( pointerInteraction.clicked ) {
+					btnDebOn = true;
+				}
+			} );
 
 			Entities.ForEach( ( ref GameMngr mngr ) => {
 				if( !mngr.Initialized ) {
 					adjustCanvas();
 					mngr.Initialized = true;
+					mngr.ScrollSpd = 20f;
 				}
 
+				if( btnDebOn ) {
+					if( mngr.ScrollSpd > 0 )
+						mngr.ScrollSpd = 0;
+					else
+						mngr.ScrollSpd = 20f;
+				}
 
 				float dt = World.TinyEnvironment().frameDeltaTime;
 

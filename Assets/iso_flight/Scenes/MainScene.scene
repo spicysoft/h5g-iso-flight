@@ -634,7 +634,8 @@
             },
             "blending": 0
         }, {
-            "$type": "IsoFlight.BlockInfo, iso_flight"
+            "$type": "IsoFlight.BlockInfo, iso_flight",
+            "CellPos": {}
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 5
@@ -723,6 +724,8 @@
                 "StableTypeHash": 8144720687316769559
             }, {
                 "StableTypeHash": 17467430352408622640
+            }, {
+                "StableTypeHash": 8691532744212715290
             }]
         }, {
             "$type": "Unity.Entities.Disabled, Unity.Entities"
@@ -1228,6 +1231,8 @@
                 "StableTypeHash": 11104265616515349531
             }, {
                 "StableTypeHash": 1295707493859106880
+            }, {
+                "StableTypeHash": 8519568132274992378
             }]
         }]
     }, {
@@ -1456,7 +1461,8 @@
             "blending": 0
         }, {
             "$type": "IsoFlight.BlockInfo, iso_flight",
-            "IsActive": true
+            "IsActive": true,
+            "CellPos": {}
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 4
@@ -1544,6 +1550,8 @@
                 "StableTypeHash": 8144720687316769559
             }, {
                 "StableTypeHash": 17467430352408622640
+            }, {
+                "StableTypeHash": 8691532744212715290
             }]
         }, {
             "$type": "Unity.Entities.Disabled, Unity.Entities"
@@ -1671,7 +1679,8 @@
             },
             "blending": 0
         }, {
-            "$type": "IsoFlight.BlockInfo, iso_flight"
+            "$type": "IsoFlight.BlockInfo, iso_flight",
+            "CellPos": {}
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 7
@@ -1760,6 +1769,8 @@
                 "StableTypeHash": 8144720687316769559
             }, {
                 "StableTypeHash": 17467430352408622640
+            }, {
+                "StableTypeHash": 8691532744212715290
             }]
         }, {
             "$type": "Unity.Entities.Disabled, Unity.Entities"
@@ -2193,7 +2204,8 @@
             },
             "blending": 0
         }, {
-            "$type": "IsoFlight.BlockInfo, iso_flight"
+            "$type": "IsoFlight.BlockInfo, iso_flight",
+            "CellPos": {}
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 6
@@ -2282,6 +2294,8 @@
                 "StableTypeHash": 8144720687316769559
             }, {
                 "StableTypeHash": 17467430352408622640
+            }, {
+                "StableTypeHash": 8691532744212715290
             }]
         }, {
             "$type": "Unity.Entities.Disabled, Unity.Entities"
@@ -2299,7 +2313,8 @@
             },
             "blending": 0
         }, {
-            "$type": "IsoFlight.BlockInfo, iso_flight"
+            "$type": "IsoFlight.BlockInfo, iso_flight",
+            "CellPos": {}
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 3
@@ -2387,6 +2402,8 @@
                 "StableTypeHash": 8144720687316769559
             }, {
                 "StableTypeHash": 17467430352408622640
+            }, {
+                "StableTypeHash": 8691532744212715290
             }]
         }, {
             "$type": "Unity.Entities.Disabled, Unity.Entities"
@@ -2554,6 +2571,125 @@
             "$type": "Unity.Tiny.UIControls.PointerInteraction, Unity.Tiny.UIControls"
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
+            "Index": 5
+        }, {
+            "$type": "Unity.Tiny.UILayout.RectTransform, Unity.Tiny.UILayout",
+            "anchorMin": {
+                "x": 0.5
+            },
+            "anchorMax": {
+                "x": 0.5
+            },
+            "sizeDelta": {
+                "x": 90,
+                "y": 90
+            },
+            "anchoredPosition": {
+                "x": -182,
+                "y": 213
+            },
+            "pivot": {
+                "x": 0.5,
+                "y": 0.5
+            }
+        }, {
+            "$type": "Unity.Entities.EntityGuid, Unity.Entities",
+            "a": 16054735691529471143,
+            "b": 9740959368534100879
+        }, {
+            "$type": "Unity.Tiny.Core2D.Translation, Unity.Tiny.Core2D",
+            "Value": {
+                "x": -182,
+                "y": -342
+            }
+        }, {
+            "$type": "Unity.Tiny.Core2D.Rotation, Unity.Tiny.Core2D",
+            "Value": {
+                "value": {
+                    "w": 1
+                }
+            }
+        }, {
+            "$type": "Unity.Tiny.Core2D.NonUniformScale, Unity.Tiny.Core2D",
+            "Value": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+            }
+        }, {
+            "$type": "Unity.Tiny.Core2D.LayerSorting, Unity.Tiny.Core2D",
+            "order": 1000
+        }, {
+            "$type": "Unity.Tiny.Core2D.Sprite2DRendererOptions, Unity.Tiny.Sprite2D",
+            "size": {
+                "x": 90,
+                "y": 90
+            },
+            "drawMode": 2
+        }, {
+            "$type": "Unity.Tiny.Core.EntityName, Unity.Tiny.Core",
+            "Elements": [{
+                "c": "B"
+            }, {
+                "c": "t"
+            }, {
+                "c": "n"
+            }, {
+                "c": "D"
+            }, {
+                "c": "e"
+            }, {
+                "c": "b"
+            }]
+        }, {
+            "$type": "Unity.Authoring.Core.ComponentOrder, Unity.Authoring.Core",
+            "Elements": [{
+                "StableTypeHash": 7960064150805274675
+            }, {
+                "StableTypeHash": 793987765392955020
+            }, {
+                "StableTypeHash": 12932679046359085526
+            }, {
+                "StableTypeHash": 12662904853204722592
+            }, {
+                "StableTypeHash": 266869500686333426
+            }, {
+                "StableTypeHash": 9104342357061045742
+            }, {
+                "StableTypeHash": 17378348762221180850
+            }, {
+                "StableTypeHash": 16791256614846730296
+            }, {
+                "StableTypeHash": 874803706151837934
+            }, {
+                "StableTypeHash": 11301794271907081408
+            }, {
+                "StableTypeHash": 147127668789581756
+            }, {
+                "StableTypeHash": 5378123052767168278
+            }, {
+                "StableTypeHash": 4259621527362548141
+            }]
+        }, {
+            "$type": "IsoFlight.BtnDebTag, iso_flight"
+        }]
+    }, {
+        "Components": [{
+            "$type": "Unity.Tiny.Core2D.Parent, Unity.Tiny.Core2D",
+            "Value": "c1310edd8c1f4f4e853b4146e8e7b100"
+        }, {
+            "$type": "Unity.Tiny.Core2D.Sprite2DRenderer, Unity.Tiny.Sprite2D",
+            "color": {
+                "r": 1,
+                "g": 1,
+                "b": 1,
+                "a": 1
+            },
+            "blending": 0
+        }, {
+            "$type": "Unity.Tiny.UIControls.PointerInteraction, Unity.Tiny.UIControls"
+        }, {
+            "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 4
         }, {
             "$type": "Unity.Tiny.UILayout.RectTransform, Unity.Tiny.UILayout",
@@ -2666,7 +2802,8 @@
             },
             "blending": 0
         }, {
-            "$type": "IsoFlight.PlayerInfo, iso_flight"
+            "$type": "IsoFlight.PlayerInfo, iso_flight",
+            "CellPos": {}
         }, {
             "$type": "IsoFlight.WorldPosInfo, iso_flight",
             "Wpos": {}
@@ -2750,6 +2887,8 @@
                 "StableTypeHash": 17359347275499841776
             }, {
                 "StableTypeHash": 13594527724077266268
+            }, {
+                "StableTypeHash": 10687354957583039142
             }]
         }]
     }]

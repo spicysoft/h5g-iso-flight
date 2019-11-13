@@ -5,6 +5,7 @@ using Unity.Mathematics;
 using Unity.Tiny.Scenes;
 using Unity.Tiny.Debugging;
 using Unity.Tiny.UIControls;
+using Unity.Tiny.Text;
 
 namespace IsoFlight
 {
@@ -54,11 +55,12 @@ namespace IsoFlight
 
 
 			var deltaTime = World.TinyEnvironment().frameDeltaTime;
+			bool isnear = false;
 
 			Entities.ForEach( ( ref PlayerInfo player, ref WorldPosInfo info ) => {
 				if( !player.Initialized ) {
 					player.Initialized = true;
-					info.Wpos = new float3( 0f, 80f, -60f );
+					info.Wpos = new float3( 0f, 75f, -BlockSystem.UnitZ );
 					return;
 				}
 
@@ -80,9 +82,75 @@ namespace IsoFlight
 					info.Wpos.x += spd;
 				}
 
+				// 境界チェック.
+
+				
+				player.CellPos.x = (int)(info.Wpos.x / BlockSystem.UnitX);
+				player.CellPos.y = (int)(info.Wpos.y / BlockSystem.UnitY);
+				player.CellPos.z = (int)(info.Wpos.z / BlockSystem.UnitZ);
+
+				int3 pcCell = player.CellPos;
+				float3 pcCenter = info.Wpos;
+				pcCenter.y += 10f;
+
+
+				Entities.ForEach( ( ref BlockInfo block, ref WorldPosInfo blockW ) => {
+					if( isNear( block.CellPos, pcCell ) ) {
+
+						float maxY = blockW.Wpos.y + 50f + 10f;
+						float minY = blockW.Wpos.y - 10f;
+
+						if( pcCenter.y < minY || pcCenter.y > maxY ) {
+							return;
+						}
+
+						float maxX = blockW.Wpos.x + 30f + 10f;
+						float minX = blockW.Wpos.x - 30f - 10f;
+
+						if( pcCenter.x < minX || pcCenter.x > maxX ) {
+							return;
+						}
+
+						float maxZ = blockW.Wpos.z + 30f + 10f;
+						float minZ = blockW.Wpos.z - 30f - 10f;
+
+						if( pcCenter.z > minZ && pcCenter.z < maxZ ) {
+							isnear = true;
+						}
+
+#if false
+						float3 center = blockW.Wpos;
+						center.y += 30f;
+						float l = math.distancesq( pcCenter, center );
+						if( l < 20f * 20f + 30f * 30f ) {
+							isnear = true;
+						}
+#endif
+					}
+				} );
 
 			} );
 
+
+
+			Entities.WithAll<DebTextTag>().ForEach( ( Entity entity ) => {
+				EntityManager.SetBufferFromString<TextString>( entity, isnear.ToString() );
+			} );
+
+		}
+
+
+		bool isNear( int3 cell1, int3 cell2 )
+		{
+			//return true;
+#if true
+			if( math.abs( cell1.y - cell2.y ) < 2 &&
+				math.abs( cell1.x - cell2.x ) < 2 &&
+				math.abs( cell1.z - cell2.z ) < 2 ) {
+				return true;
+			}
+			return false;
+#endif
 		}
 
 	}

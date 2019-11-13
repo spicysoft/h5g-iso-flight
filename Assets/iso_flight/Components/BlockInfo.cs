@@ -10,6 +10,6 @@ namespace IsoFlight
 		public float Timer;
 		public float Vx;
 		public float Vy;
-		//public float3 Wpos;
+		public int3 CellPos;
 	}
 }

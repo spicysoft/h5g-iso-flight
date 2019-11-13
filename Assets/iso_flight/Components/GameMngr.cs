@@ -12,5 +12,6 @@ namespace IsoFlight
 		public int Score;           // スコア.
 		public float GameTimer;     // ゲームタイマー.
 		public float ModeTimer;     // モードタイマー.
+		public float ScrollSpd;		// スクロールスピード.
 	}
 }

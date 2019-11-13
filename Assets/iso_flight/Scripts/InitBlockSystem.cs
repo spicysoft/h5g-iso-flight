@@ -39,6 +39,7 @@ namespace IsoFlight
 				int iy = cntxy / 5;
 				int iz = cnt / 20;
 
+#if false
 				if( (ix == 2 && iy == 2) || (ix == 2 && iy == 1) ) {
 					cnt++;
 					cntxy = cnt % 20;
@@ -46,13 +47,13 @@ namespace IsoFlight
 					iy = cntxy / 5;
 					iz = cnt / 20;
 				}
+#endif
 
-				info.Wpos.x = (ix - 2) * 60f;
-				info.Wpos.y = iy * 50f;
-				info.Wpos.z = (iz + 2) * 60f;
+				info.Wpos.x = (ix - 1) * BlockSystem.UnitX;
+				info.Wpos.y = (iy + 1) * BlockSystem.UnitY;
+				info.Wpos.z = (iz + 2) * BlockSystem.UnitZ;
 
 				cnt++;
-
 
 			} );
 
