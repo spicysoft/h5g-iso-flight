@@ -17,11 +17,15 @@ namespace IsoFlight
 			} );
 
 			Entities.ForEach( ( ref GroundInfo grnd, ref WorldPosInfo info ) => {
+				if( !grnd.Initialized ) {
+					grnd.Initialized = true;
+					return;
+				}
 
 				info.Wpos.z -= scrollSpd * deltaTime;
 
-				if( info.Wpos.z <= -600f ) {
-					info.Wpos.z += 1500f;
+				if( info.Wpos.z <= -900f ) {
+					info.Wpos.z += 1800f;
 				}
 			} );
 

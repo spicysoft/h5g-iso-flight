@@ -18,6 +18,9 @@
             "BlockScn": {
                 "SceneGuid": "713af3638a06445b92832e5bba3be372"
             },
+            "BlkShadowScn": {
+                "SceneGuid": "8c69878fefce40ebb80ad771b0a9dd2d"
+            },
             "GameOverScn": {
                 "SceneGuid": "00000000000000000000000000000000"
             }
@@ -42,6 +45,10 @@
                 "SceneReference": {
                     "SceneGuid": "713af3638a06445b92832e5bba3be372"
                 }
+            }, {
+                "SceneReference": {
+                    "SceneGuid": "8c69878fefce40ebb80ad771b0a9dd2d"
+                }
             }]
         }, {
             "$type": "Unity.Tiny.Scenes.StartupScenes, Unity.Tiny.Scenes",
@@ -60,6 +67,8 @@
                 "StableTypeHash": 16662064023107963892
             }, {
                 "StableTypeHash": 6777475419181991173
+            }, {
+                "StableTypeHash": 4410637030281789703
             }]
         }, {
             "$type": "Unity.Authoring.Core.ConfigurationTag, Unity.Authoring.Core"

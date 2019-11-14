@@ -7,9 +7,12 @@ namespace IsoFlight
 	{
 		public bool IsActive;
 		public bool Initialized;
+		public bool ShadowChecked;
+		//public int SerialId;
+		//public int ShadowId;
 		public float Timer;
-		public float Vx;
-		public float Vy;
 		public int3 CellPos;
+		public Entity shadowEntity;		// 下.
+		public Entity shadowEntity2;	// 横.
 	}
 }

@@ -9,6 +9,7 @@ namespace IsoFlight
 		public SceneReference MainScn;
 		public SceneReference ResultScn;
 		public SceneReference BlockScn;
+		public SceneReference BlkShadowScn;
 		//public SceneReference ScoreScn;
 		public SceneReference GameOverScn;
 	}

@@ -26,7 +26,7 @@ namespace IsoFlight
 				// プライオリティ.
 				if( !info.DontCalcOrder ) {
 					float order = 500f + info.Wpos.x - info.Wpos.z;     // マイナスにならないように500たす.
-					order += info.Wpos.y * 2f;  // yの重みあげる.
+					order += info.Wpos.y * 1.5f;  // yの重みあげる.
 					layer.order = (short)order;
 				}
 			} );
