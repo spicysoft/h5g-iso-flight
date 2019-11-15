@@ -1,5 +1,6 @@
 using Unity.Entities;
 using Unity.Tiny.Core;
+using Unity.Tiny.Debugging;
 using Unity.Tiny.Scenes;
 
 namespace IsoFlight
@@ -26,16 +27,29 @@ namespace IsoFlight
 				if( !gen.Initialized ) {
 					gen.Initialized = true;
 					gen.Timer = 0;
-					reqGen = true;
+					reqGen = true;  // test
+					return;
 				}
 
 				float dt = World.TinyEnvironment().frameDeltaTime;
-
+				gen.Timer += dt;
+				if( gen.Timer > 10f ) {
+					gen.Timer = 0;
+					reqGen = true;
+				}
 
 			} );
 
 			if( reqGen ) {
-				for( int i = 0; i < 12; i++ ) {
+
+				Entities.ForEach( ( ref InitBlockInfo info ) => {
+					info.BlockCnt = 0;
+					info.GeneretedNum = 8;
+				} );
+
+				Debug.LogAlways( "--reqgen" );
+
+				for( int i = 0; i < 8; i++ ) {
 					bool recycled = false;
 					Entities.ForEach( ( Entity entity, ref BlockInfo block ) => {
 						if( !recycled ) {
@@ -47,7 +61,7 @@ namespace IsoFlight
 						}
 					} );
 
-					//Debug.LogFormatAlways( "bulcnt {0} recycled {1}", bulCnt, recycled );
+					//Debug.LogFormatAlways( "recycled {0}", recycled );
 
 					if( !recycled ) {
 						var env = World.TinyEnvironment();

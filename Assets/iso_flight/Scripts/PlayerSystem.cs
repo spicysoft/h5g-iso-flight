@@ -97,8 +97,8 @@ namespace IsoFlight
 				Entities.ForEach( ( ref BlockInfo block, ref WorldPosInfo blockW ) => {
 					if( isNear( block.CellPos, pcCell ) ) {
 
-						float maxY = blockW.Wpos.y + 50f + 10f;
-						float minY = blockW.Wpos.y - 10f;
+						float maxY = blockW.Wpos.y + 25f + 10f;
+						float minY = blockW.Wpos.y - 25f - 10f;
 
 						if( pcCenter.y < minY || pcCenter.y > maxY ) {
 							return;

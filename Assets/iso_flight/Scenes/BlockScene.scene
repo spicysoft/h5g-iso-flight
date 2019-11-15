@@ -24,7 +24,8 @@
             "DontCalcOrder": true,
             "Wpos": {
                 "x": -150,
-                "y": 25
+                "y": 25,
+                "z": -600
             }
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
@@ -36,8 +37,8 @@
         }, {
             "$type": "Unity.Tiny.Core2D.Translation, Unity.Tiny.Core2D",
             "Value": {
-                "x": -194.2,
-                "y": 112.4
+                "x": -407,
+                "y": 62
             }
         }, {
             "$type": "Unity.Tiny.Core2D.Rotation, Unity.Tiny.Core2D",
@@ -143,7 +144,9 @@
             "blending": 0
         }, {
             "$type": "IsoFlight.WorldPosInfo, iso_flight",
-            "Wpos": {}
+            "Wpos": {
+                "z": -600
+            }
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core"
         }, {
@@ -153,7 +156,7 @@
         }, {
             "$type": "Unity.Tiny.Core2D.Translation, Unity.Tiny.Core2D",
             "Value": {
-                "x": -319,
+                "x": -384,
                 "y": -1
             }
         }, {
@@ -171,7 +174,8 @@
                 "z": 1
             }
         }, {
-            "$type": "Unity.Tiny.Core2D.LayerSorting, Unity.Tiny.Core2D"
+            "$type": "Unity.Tiny.Core2D.LayerSorting, Unity.Tiny.Core2D",
+            "order": -100
         }, {
             "$type": "Unity.Tiny.Core2D.Sprite2DRendererOptions, Unity.Tiny.Sprite2D",
             "size": {
@@ -230,6 +234,8 @@
                 "StableTypeHash": 10641837181788769510
             }, {
                 "StableTypeHash": 17214780210186286631
+            }, {
+                "StableTypeHash": 16015605248672495873
             }]
         }]
     }, {
@@ -248,7 +254,9 @@
         }, {
             "$type": "IsoFlight.WorldPosInfo, iso_flight",
             "DontCalcOrder": true,
-            "Wpos": {}
+            "Wpos": {
+                "z": -600
+            }
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
             "Index": 1
@@ -259,8 +267,8 @@
         }, {
             "$type": "Unity.Tiny.Core2D.Translation, Unity.Tiny.Core2D",
             "Value": {
-                "x": -87.5,
-                "y": -47.7
+                "x": -354,
+                "y": -104
             }
         }, {
             "$type": "Unity.Tiny.Core2D.Rotation, Unity.Tiny.Core2D",

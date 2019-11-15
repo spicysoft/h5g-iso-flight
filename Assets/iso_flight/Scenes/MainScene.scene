@@ -147,7 +147,7 @@
             }
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
-            "Index": 4
+            "Index": 5
         }, {
             "$type": "Unity.Entities.EntityGuid, Unity.Entities",
             "a": 372186461317319837,
@@ -471,7 +471,7 @@
             "Wpos": {}
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
-            "Index": 3
+            "Index": 4
         }, {
             "$type": "Unity.Entities.EntityGuid, Unity.Entities",
             "a": 3647520854263744446,
@@ -650,7 +650,7 @@
             }
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
-            "Index": 7
+            "Index": 8
         }, {
             "$type": "Unity.Entities.EntityGuid, Unity.Entities",
             "a": 3761397020242887418,
@@ -1106,7 +1106,7 @@
             }
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
-            "Index": 8
+            "Index": 9
         }, {
             "$type": "Unity.Entities.EntityGuid, Unity.Entities",
             "a": 8581301545571796424,
@@ -1212,7 +1212,7 @@
             }
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
-            "Index": 5
+            "Index": 6
         }, {
             "$type": "Unity.Entities.EntityGuid, Unity.Entities",
             "a": 9014435412348192508,
@@ -1367,7 +1367,7 @@
             }
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
-            "Index": 6
+            "Index": 7
         }, {
             "$type": "Unity.Entities.EntityGuid, Unity.Entities",
             "a": 11399136371613909083,
@@ -2186,10 +2186,55 @@
         "Components": [{
             "$type": "Unity.Tiny.Core2D.Parent, Unity.Tiny.Core2D"
         }, {
+            "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
+            "Index": 19
+        }, {
+            "$type": "Unity.Entities.EntityGuid, Unity.Entities",
+            "a": 15396176238386170249,
+            "b": 11959461352234075389
+        }, {
+            "$type": "Unity.Tiny.Core.EntityName, Unity.Tiny.Core",
+            "Elements": [{
+                "c": "I"
+            }, {
+                "c": "n"
+            }, {
+                "c": "i"
+            }, {
+                "c": "t"
+            }, {
+                "c": "B"
+            }, {
+                "c": "l"
+            }, {
+                "c": "o"
+            }, {
+                "c": "c"
+            }, {
+                "c": "k"
+            }]
+        }, {
+            "$type": "Unity.Authoring.Core.ComponentOrder, Unity.Authoring.Core",
+            "Elements": [{
+                "StableTypeHash": 7960064150805274675
+            }, {
+                "StableTypeHash": 793987765392955020
+            }, {
+                "StableTypeHash": 12662904853204722592
+            }, {
+                "StableTypeHash": 874803706151837934
+            }]
+        }]
+    }, {
+        "Components": [{
+            "$type": "Unity.Tiny.Core2D.Parent, Unity.Tiny.Core2D"
+        }, {
             "$type": "IsoFlight.BlockGenerateInfo, iso_flight"
         }, {
+            "$type": "IsoFlight.InitBlockInfo, iso_flight"
+        }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
-            "Index": 9
+            "Index": 2
         }, {
             "$type": "Unity.Entities.EntityGuid, Unity.Entities",
             "a": 15609767839509335097,
@@ -2225,6 +2270,10 @@
                 "StableTypeHash": 874803706151837934
             }, {
                 "StableTypeHash": 13030139137649077925
+            }, {
+                "StableTypeHash": 14135745694804319248
+            }, {
+                "StableTypeHash": 3907735600522175269
             }]
         }]
     }, {
@@ -2482,7 +2531,7 @@
             "Wpos": {}
         }, {
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core",
-            "Index": 2
+            "Index": 3
         }, {
             "$type": "Unity.Entities.EntityGuid, Unity.Entities",
             "a": 18194758522043450806,

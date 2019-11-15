@@ -32,8 +32,10 @@ namespace IsoFlight
 				info.Wpos.z -= scrollSpd * dt;
 
 				// スクロールアウト.
-				if( info.Wpos.z < -8f * UnitZ ) {
+				if( info.Wpos.z < -11f * UnitZ ) {
 					// 消す.
+					block.IsActive = false;
+					return;
 				}
 
 				block.CellPos.x = (int)(info.Wpos.x / BlockSystem.UnitX);

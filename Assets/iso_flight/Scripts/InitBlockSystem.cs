@@ -10,18 +10,44 @@ namespace IsoFlight
 	public class InitBlockSystem : ComponentSystem
 	{
 		Random _random;
-		private int cnt = 0;
 		//private int BlkCounter = 0;
 
 		protected override void OnUpdate()
 		{
+			int BlkCnt = 0;
+			int generetedNum = 0;
+			bool updateBlkCnt = false;
+
 			Entities.ForEach( ( ref InitBlockInfo info ) => {
 				if( !info.Initialized ) {
 					info.Initialized = true;
+					info.BlockCnt = 0;
+					//info.GeneretedNum = 0;
 					int seed = World.TinyEnvironment().frameNum;
 					_random.InitState( (uint)seed );
+					return;
 				}
+				BlkCnt = info.BlockCnt;
+				generetedNum = info.GeneretedNum;
 			} );
+
+			if( generetedNum == 0 )
+				return;
+
+			int loadedNum = 0;
+			Entities.ForEach( ( ref BlockInfo block, ref WorldPosInfo wpos ) => {
+				if( !block.IsActive )
+					return;
+				if( block.Initialized )
+					return;
+				loadedNum++;
+				//Debug.LogFormatAlways("wp {0}", wpos.Wpos);
+			} );
+
+			//Debug.LogFormatAlways( "load {0}", loadedNum );
+			if( loadedNum < generetedNum )
+				return;
+
 
 			Entities.ForEach( ( ref BlockInfo block, ref WorldPosInfo info, /*ref Translation trans,*/ ref NonUniformScale scl ) => {
 				if( !block.IsActive )
@@ -39,10 +65,10 @@ namespace IsoFlight
 				scl.Value.x = 1f;
 
 
-				int cntxy = cnt % 20;
+				int cntxy = BlkCnt % 20;
 				int ix = cntxy % 5;
 				int iy = cntxy / 5;
-				int iz = cnt / 20;
+				int iz = BlkCnt / 20;
 
 #if false
 				if( (ix == 2 && iy == 2) || (ix == 2 && iy == 1) ) {
@@ -54,16 +80,28 @@ namespace IsoFlight
 				}
 #endif
 
-				info.Wpos.x = (ix - 1) * BlockSystem.UnitX;
+				Debug.LogFormatAlways("blkcnt {0}", BlkCnt);
+
+				if( ix == 0 ) {
+					BlkCnt++;
+					cntxy = BlkCnt % 20;
+					ix = cntxy % 5;
+					iy = cntxy / 5;
+					iz = BlkCnt / 20;
+				}
+
+
+				info.Wpos.x = (ix - 2) * BlockSystem.UnitX;
 				info.Wpos.y = (iy + 1) * BlockSystem.UnitY + BlockSystem.UnitY * 0.5f;
-				info.Wpos.z = (iz + 2) * BlockSystem.UnitZ;
+				//info.Wpos.z = (iz + 2) * BlockSystem.UnitZ;
+				info.Wpos.z = iz * BlockSystem.UnitZ + BlockSystem.UnitZ*11f;
 
 				block.CellPos.x = (int)(info.Wpos.x / BlockSystem.UnitX);
 				block.CellPos.y = (int)(info.Wpos.y / BlockSystem.UnitY);
 				block.CellPos.z = (int)(info.Wpos.z / BlockSystem.UnitZ);
 
-				cnt++;
-
+				BlkCnt++;
+				updateBlkCnt = true;
 
 				// shadow.
 				BlkShadowInfo shadow = EntityManager.GetComponentData<BlkShadowInfo>( block.shadowEntity );
@@ -86,6 +124,14 @@ namespace IsoFlight
 				EntityManager.SetComponentData( block.shadowEntity2, blkpos2 );
 
 			} );
+
+
+			if( updateBlkCnt ) {
+				Debug.LogFormatAlways( "->blkcnt {0}", BlkCnt );
+				Entities.ForEach( ( ref InitBlockInfo info ) => {
+					info.BlockCnt = BlkCnt;
+				} );
+			}
 
 		}
 	}

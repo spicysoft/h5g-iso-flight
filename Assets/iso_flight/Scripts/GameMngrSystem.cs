@@ -44,14 +44,14 @@ namespace IsoFlight
 				if( !mngr.Initialized ) {
 					adjustCanvas();
 					mngr.Initialized = true;
-					mngr.ScrollSpd = 20f;
+					mngr.ScrollSpd = 30f;
 				}
 
 				if( btnDebOn ) {
 					if( mngr.ScrollSpd > 0 )
 						mngr.ScrollSpd = 0;
 					else
-						mngr.ScrollSpd = 20f;
+						mngr.ScrollSpd = 30f;
 				}
 
 				float dt = World.TinyEnvironment().frameDeltaTime;
