@@ -9,6 +9,13 @@ namespace IsoFlight
 	{
 		protected override void OnUpdate()
 		{
+			bool IsPause = false;
+			Entities.ForEach( ( ref GameMngr mngr ) => {
+				IsPause = mngr.IsPause;
+			} );
+			if( IsPause )
+				return;
+
 			var deltaTime = World.TinyEnvironment().frameDeltaTime;
 			float scrollSpd = 0;
 

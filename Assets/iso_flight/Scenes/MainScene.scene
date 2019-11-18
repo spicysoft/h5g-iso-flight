@@ -6,7 +6,7 @@
         { "Guid": "78ee405c1bfca4ed28e09bcb3d147e84", "FileId": 21300000, "Type": 3},
         { "Guid": "93b4fd46340504effad371c13c3d2586", "FileId": 21300000, "Type": 3},
         { "Guid": "d8d23ea04c8574124a8cb2a56dda7f16", "FileId": 21300000, "Type": 3},
-        { "Guid": "8f586378b4e144a9851e7b34d9b748ee", "FileId": 11400000, "Type": 2},
+        { "Guid": "afde23e60bc734957a22aa72e822734e", "FileId": 11400000, "Type": 2},
         { "Guid": "64da0b66c2fa14006b1998844e8a82eb", "FileId": 21300000, "Type": 3}],
     "Entities": [{
         "Components": [{
@@ -845,7 +845,7 @@
     }, {
         "Components": [{
             "$type": "Unity.Tiny.Text.Text2DStyleBitmapFont, Unity.Tiny.Text",
-            "font": "4b70dfce56d44d6d7edb3d1e1569956f"
+            "font": "6e7ace470b5383b8df0218e5902decbf"
         }, {
             "$type": "Unity.Tiny.Text.Text2DRenderer, Unity.Tiny.Text",
             "style": "4c183909f258484b812241ecd0a68740",

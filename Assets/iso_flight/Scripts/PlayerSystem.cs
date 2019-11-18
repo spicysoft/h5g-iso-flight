@@ -55,7 +55,7 @@ namespace IsoFlight
 
 
 			var deltaTime = World.TinyEnvironment().frameDeltaTime;
-			bool isnear = false;
+			bool isHit = false;
 
 			Entities.ForEach( ( ref PlayerInfo player, ref WorldPosInfo info ) => {
 				if( !player.Initialized ) {
@@ -97,25 +97,27 @@ namespace IsoFlight
 				Entities.ForEach( ( ref BlockInfo block, ref WorldPosInfo blockW ) => {
 					if( isNear( block.CellPos, pcCell ) ) {
 
-						float maxY = blockW.Wpos.y + 25f + 10f;
-						float minY = blockW.Wpos.y - 25f - 10f;
+						float pcRad = 5f;
+
+						float maxY = blockW.Wpos.y + 25f + pcRad;
+						float minY = blockW.Wpos.y - 25f - pcRad;
 
 						if( pcCenter.y < minY || pcCenter.y > maxY ) {
 							return;
 						}
 
-						float maxX = blockW.Wpos.x + 30f + 10f;
-						float minX = blockW.Wpos.x - 30f - 10f;
+						float maxX = blockW.Wpos.x + 30f + pcRad;
+						float minX = blockW.Wpos.x - 30f - pcRad;
 
 						if( pcCenter.x < minX || pcCenter.x > maxX ) {
 							return;
 						}
 
-						float maxZ = blockW.Wpos.z + 30f + 10f;
-						float minZ = blockW.Wpos.z - 30f - 10f;
+						float maxZ = blockW.Wpos.z + 30f + pcRad;
+						float minZ = blockW.Wpos.z - 30f - pcRad;
 
 						if( pcCenter.z > minZ && pcCenter.z < maxZ ) {
-							isnear = true;
+							isHit = true;
 						}
 
 #if false
@@ -132,9 +134,17 @@ namespace IsoFlight
 			} );
 
 
+			if( isHit ) {
+				Entities.ForEach( ( ref GameMngr mngr ) => {
+					mngr.IsPause = true;
+					mngr.ReqGameOver = true;
+				} );
+				SceneService.LoadSceneAsync( World.TinyEnvironment().GetConfigData<GameConfig>().EffExplScn );
+			}
+
 
 			Entities.WithAll<DebTextTag>().ForEach( ( Entity entity ) => {
-				EntityManager.SetBufferFromString<TextString>( entity, isnear.ToString() );
+				EntityManager.SetBufferFromString<TextString>( entity, isHit.ToString() );
 			} );
 
 		}

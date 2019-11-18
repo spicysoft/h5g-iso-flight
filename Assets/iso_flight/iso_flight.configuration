@@ -7,22 +7,22 @@
         "Components": [{
             "$type": "IsoFlight.GameConfig, iso_flight",
             "TitleScn": {
-                "SceneGuid": "00000000000000000000000000000000"
+                "SceneGuid": "edea759d93004b0a9b639ed08518098b"
             },
             "MainScn": {
                 "SceneGuid": "6df51742e7694f9a9bd1d07d75839f26"
             },
             "ResultScn": {
-                "SceneGuid": "00000000000000000000000000000000"
+                "SceneGuid": "d4bcb6d45d5644259ed64d0eea09a558"
             },
             "BlockScn": {
                 "SceneGuid": "713af3638a06445b92832e5bba3be372"
             },
-            "BlkShadowScn": {
-                "SceneGuid": "8c69878fefce40ebb80ad771b0a9dd2d"
+            "EffExplScn": {
+                "SceneGuid": "e6c8199313eb4615a7f0a58cc0d023dd"
             },
             "GameOverScn": {
-                "SceneGuid": "00000000000000000000000000000000"
+                "SceneGuid": "6081d54c02fd4f259b1a2d1421b2bdae"
             }
         }, {
             "$type": "Unity.Entities.EntityGuid, Unity.Entities",
@@ -45,12 +45,28 @@
                 "SceneReference": {
                     "SceneGuid": "713af3638a06445b92832e5bba3be372"
                 }
+            }, {
+                "SceneReference": {
+                    "SceneGuid": "e6c8199313eb4615a7f0a58cc0d023dd"
+                }
+            }, {
+                "SceneReference": {
+                    "SceneGuid": "edea759d93004b0a9b639ed08518098b"
+                }
+            }, {
+                "SceneReference": {
+                    "SceneGuid": "6081d54c02fd4f259b1a2d1421b2bdae"
+                }
+            }, {
+                "SceneReference": {
+                    "SceneGuid": "d4bcb6d45d5644259ed64d0eea09a558"
+                }
             }]
         }, {
             "$type": "Unity.Tiny.Scenes.StartupScenes, Unity.Tiny.Scenes",
             "Elements": [{
                 "SceneReference": {
-                    "SceneGuid": "6df51742e7694f9a9bd1d07d75839f26"
+                    "SceneGuid": "edea759d93004b0a9b639ed08518098b"
                 }
             }]
         }, {
@@ -65,6 +81,8 @@
                 "StableTypeHash": 6777475419181991173
             }, {
                 "StableTypeHash": 4410637030281789703
+            }, {
+                "StableTypeHash": 363286853717944408
             }]
         }, {
             "$type": "Unity.Authoring.Core.ConfigurationTag, Unity.Authoring.Core"

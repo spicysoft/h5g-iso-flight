@@ -23,8 +23,9 @@ namespace IsoFlight
 		public const float GameTimeLimit = 190f;        // ゲーム時間.
 		//public const int MdTitle = 0;
 		public const int MdGame = 0;
-		public const int MdGameOver = 1;
-		public const int MdResult = 2;
+		public const int MdPreGameOver = 1;
+		public const int MdGameOver = 2;
+		public const int MdResult = 3;
 
 
 		protected override void OnUpdate()
@@ -60,6 +61,13 @@ namespace IsoFlight
 				case MdGame:
 					if( mngr.ReqGameOver ) {
 						mngr.ReqGameOver = false;
+						mngr.Mode = MdPreGameOver;
+						mngr.ModeTimer = 0;
+					}
+					break;
+				case MdPreGameOver:
+					mngr.ModeTimer += dt;
+					if( mngr.ModeTimer > 0.5f ) {
 						reqGameOver = true;
 						mngr.Mode = MdGameOver;
 						mngr.ModeTimer = 0;
@@ -112,9 +120,9 @@ namespace IsoFlight
 			}
 			else if( reqGameOver ) {
 				// ゲームオーバー表示.
-				SceneReference panelBase = new SceneReference();
-				panelBase = World.TinyEnvironment().GetConfigData<GameConfig>().GameOverScn;
-				SceneService.LoadSceneAsync( panelBase );
+				SceneReference scn = new SceneReference();
+				scn = World.TinyEnvironment().GetConfigData<GameConfig>().GameOverScn;
+				SceneService.LoadSceneAsync( scn );
 			}
 
 		}

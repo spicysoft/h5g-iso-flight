@@ -47,7 +47,7 @@ namespace IsoFlight
 					info.GeneretedNum = 8;
 				} );
 
-				Debug.LogAlways( "--reqgen" );
+				//Debug.LogAlways( "--reqgen" );
 
 				for( int i = 0; i < 8; i++ ) {
 					bool recycled = false;
