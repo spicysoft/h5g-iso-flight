@@ -98,13 +98,10 @@
             "$type": "Unity.Authoring.Core.SiblingIndex, Unity.Authoring.Core"
         }, {
             "$type": "Unity.Tiny.UILayout.RectTransform, Unity.Tiny.UILayout",
-            "anchorMin": {
-                "x": 0.5,
-                "y": 0.5
-            },
+            "anchorMin": {},
             "anchorMax": {
-                "x": 0.5,
-                "y": 0.5
+                "x": 1,
+                "y": 1
             },
             "sizeDelta": {},
             "anchoredPosition": {},
@@ -201,7 +198,7 @@
         }, {
             "$type": "Unity.Tiny.Core2D.Translation, Unity.Tiny.Core2D",
             "Value": {
-                "y": 101
+                "y": 122
             }
         }, {
             "$type": "Unity.Tiny.Core2D.Rotation, Unity.Tiny.Core2D",

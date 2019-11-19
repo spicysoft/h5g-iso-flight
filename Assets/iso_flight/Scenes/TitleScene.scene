@@ -419,7 +419,10 @@
         }, {
             "$type": "Unity.Tiny.UILayout.RectTransform, Unity.Tiny.UILayout",
             "anchorMin": {},
-            "anchorMax": {},
+            "anchorMax": {
+                "x": 1,
+                "y": 1
+            },
             "sizeDelta": {},
             "anchoredPosition": {},
             "pivot": {}

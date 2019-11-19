@@ -7,11 +7,16 @@ namespace IsoFlight
 {
 	public class BlockPattern //: ComponentSystem
 	{
+		static public readonly int[] Ptn1 = {
+			0, 1, 0, 1, 0,
+			0, 0, 0, 0, 0,
+			0, 0, 0, 0, 0,
+			0, 0, 0, 0, 0, };
 
-		static public readonly int[] Ptn1 = { 0, 1, 0, 1, 0,  0, 1, 0, 1, 0,  0, 1, 0, 1, 0,  0, 1, 0, 1, 0, };
-		static public readonly int[] Ptn2 = { 1, 1, 1, 1, 1,  1, 1, 0, 1, 1,  1, 1, 0, 1, 1,  1, 1, 1, 1, 1, };
+		//static public readonly int[] Ptn1 = { 0, 1, 0, 1, 0,  0, 1, 0, 1, 0,  0, 1, 0, 1, 0,  0, 1, 0, 1, 0, };
+		static public readonly int[] Ptn2 = { 0, 0, 0, 0, 0,  1, 1, 0, 1, 1,  1, 1, 0, 1, 1,  0, 1, 1, 1, 0, };
 
-		static public readonly int[][] Tbl = { Ptn1, Ptn2 };
+		static public readonly int[][] Tbl = { Ptn2, Ptn2 };
 
 		/*
 		public readonly int[,] Tbl = {

@@ -84,7 +84,19 @@ namespace IsoFlight
 
 				// 境界チェック.
 
-				
+				if( info.Wpos.x < -150f + 15f )
+					info.Wpos.x = -150f + 15f;
+				else if( info.Wpos.x > 150f - 10f )
+					info.Wpos.x = 150f - 10f;
+
+				if( info.Wpos.y < 5f )
+					info.Wpos.y = 5f;
+				else if( info.Wpos.y > 200f - 15f )
+					info.Wpos.y = 200f - 15f;
+
+
+				// コリジョンチェック.
+
 				player.CellPos.x = (int)(info.Wpos.x / BlockSystem.UnitX);
 				player.CellPos.y = (int)(info.Wpos.y / BlockSystem.UnitY);
 				player.CellPos.z = (int)(info.Wpos.z / BlockSystem.UnitZ);

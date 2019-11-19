@@ -14,7 +14,7 @@ namespace IsoFlight
 			bool reqGen = false;
 			bool isPause = false;
 
-#if false
+#if true
 			Entities.ForEach( ( ref GameMngr mngr ) => {
 				isPause = mngr.IsPause;
 			} );
@@ -42,14 +42,22 @@ namespace IsoFlight
 
 			if( reqGen ) {
 
+				int[] ptn = BlockPattern.Tbl[0];
+				int num = 0;
+				for( int i = 0; i < ptn.Length; ++i ) {
+					if( ptn[i] != 0 )
+						num++;
+				}
+
+
 				Entities.ForEach( ( ref InitBlockInfo info ) => {
-					info.BlockCnt = 0;
-					info.GeneretedNum = 8;
+					info.BlockCntr = 0;
+					info.GeneretedNum = num;
 				} );
 
 				//Debug.LogAlways( "--reqgen" );
 
-				for( int i = 0; i < 8; i++ ) {
+				for( int i = 0; i < num; i++ ) {
 					bool recycled = false;
 					Entities.ForEach( ( Entity entity, ref BlockInfo block ) => {
 						if( !recycled ) {

@@ -20,17 +20,19 @@ namespace IsoFlight
 		public const float BorderRight = 800f;
 
 
-		public const float GameTimeLimit = 190f;        // ゲーム時間.
+		//public const float GameTimeLimit = 190f;        // ゲーム時間.
 		//public const int MdTitle = 0;
 		public const int MdGame = 0;
 		public const int MdPreGameOver = 1;
 		public const int MdGameOver = 2;
 		public const int MdResult = 3;
+		public const float DefScrSpd = 60f;
 
 
 		protected override void OnUpdate()
 		{
 			int score = 0;
+			bool isPause = false;
 			bool reqGameOver = false;
 			bool reqResult = false;
 			bool btnDebOn = false;
@@ -45,14 +47,20 @@ namespace IsoFlight
 				if( !mngr.Initialized ) {
 					adjustCanvas();
 					mngr.Initialized = true;
-					mngr.ScrollSpd = 30f;
+					mngr.ScrollSpd = DefScrSpd;
+					mngr.Score = 0;
+					mngr.GameTimer = 0;
+					mngr.ModeTimer = 0;
+					mngr.Mode = 0;
+					mngr.IsPause = false;
+					return;
 				}
 
 				if( btnDebOn ) {
 					if( mngr.ScrollSpd > 0 )
 						mngr.ScrollSpd = 0;
 					else
-						mngr.ScrollSpd = 30f;
+						mngr.ScrollSpd = DefScrSpd;
 				}
 
 				float dt = World.TinyEnvironment().frameDeltaTime;
@@ -82,6 +90,9 @@ namespace IsoFlight
 					break;
 				}
 
+				isPause = mngr.IsPause;
+				mngr.Score = (int)mngr.GameTimer;
+				score = mngr.Score;
 
 				if( mngr.IsPause ) {
 					//isPause = true;
@@ -99,12 +110,11 @@ namespace IsoFlight
 			} );
 
 
-#if false
+#if true
 			// タイマー表示.
 			if( !isPause ) {
-				Entities.WithAll<TextTimerTag>().ForEach( ( Entity entity ) => {
-					int t = (int)( GameTimeLimit - timer );
-					EntityManager.SetBufferFromString<TextString>( entity, t.ToString() );
+				Entities.WithAll<TxtScoreTag>().ForEach( ( Entity entity ) => {
+					EntityManager.SetBufferFromString<TextString>( entity, score.ToString() );
 				} );
 			}
 #endif
