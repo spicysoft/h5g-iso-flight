@@ -94,6 +94,10 @@ namespace IsoFlight
 				mngr.Score = (int)mngr.GameTimer;
 				score = mngr.Score;
 
+				// スクロールスピード.
+				float addspd = (float)(score / 10) * 5f;
+				mngr.ScrollSpd = DefScrSpd + addspd;
+
 				if( mngr.IsPause ) {
 					//isPause = true;
 					return;
@@ -101,6 +105,9 @@ namespace IsoFlight
 
 				// タイマー.
 				mngr.GameTimer += dt;
+
+
+
 #if false
 				timer = mngr.GameTimer;
 				if( timer >= GameTimeLimit ) {
@@ -110,23 +117,21 @@ namespace IsoFlight
 			} );
 
 
-#if true
-			// タイマー表示.
+
+			// スコア表示.
 			if( !isPause ) {
 				Entities.WithAll<TxtScoreTag>().ForEach( ( Entity entity ) => {
 					EntityManager.SetBufferFromString<TextString>( entity, score.ToString() );
 				} );
 			}
-#endif
+
 			if( reqResult ) {
-#if true
 				// ゲームオーバーシーンアンロード.
 				SceneReference gameoverScn = World.TinyEnvironment().GetConfigData<GameConfig>().GameOverScn;
 				SceneService.UnloadAllSceneInstances( gameoverScn );
 				// リザルト表示.
 				SceneReference resultScn = World.TinyEnvironment().GetConfigData<GameConfig>().ResultScn;
 				SceneService.LoadSceneAsync( resultScn );
-#endif
 			}
 			else if( reqGameOver ) {
 				// ゲームオーバー表示.

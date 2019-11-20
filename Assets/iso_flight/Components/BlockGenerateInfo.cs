@@ -7,5 +7,6 @@ namespace IsoFlight
 	{
 		public bool Initialized;
 		public float Timer;
+		public float Interval;
 	}
 }

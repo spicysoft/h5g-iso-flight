@@ -12,8 +12,8 @@ namespace IsoFlight
 	public class PlayerSystem : ComponentSystem
 	{
 		// 半径.
-		public const float PlayerR = 30f;
-		public const float PlayerRsq = PlayerR * PlayerR;
+		//public const float PlayerR = 30f;
+		//public const float PlayerRsq = PlayerR * PlayerR;
 
 
 		protected override void OnUpdate()

@@ -19,8 +19,14 @@ namespace IsoFlight
 				info.Wpos = pcPos;
 				info.Wpos.y = 0;
 
+#if false
 				int iy = (int)(pcPos.y / 50f);
 				float alpha = 0.6f - 0.1f*iy;
+				if( alpha < 0.2f )
+					alpha = 0.2f;
+#endif
+
+				float alpha = 0.6f - 0.005f * pcPos.y;
 				if( alpha < 0.2f )
 					alpha = 0.2f;
 

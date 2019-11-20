@@ -9,7 +9,7 @@
         { "Guid": "d8d23ea04c8574124a8cb2a56dda7f16", "FileId": 21300000, "Type": 3},
         { "Guid": "93b4fd46340504effad371c13c3d2586", "FileId": 21300000, "Type": 3},
         { "Guid": "afde23e60bc734957a22aa72e822734e", "FileId": 11400000, "Type": 2},
-        { "Guid": "64da0b66c2fa14006b1998844e8a82eb", "FileId": 21300000, "Type": 3}],
+        { "Guid": "81845c287686049c3b175289fdbe2324", "FileId": 21300000, "Type": 3}],
     "Entities": [{
         "Components": [{
             "$type": "Unity.Tiny.Core2D.Parent, Unity.Tiny.Core2D",
@@ -179,7 +179,7 @@
             }
         }, {
             "$type": "Unity.Tiny.Core2D.LayerSorting, Unity.Tiny.Core2D",
-            "order": -100
+            "order": -110
         }, {
             "$type": "Unity.Tiny.Core2D.Sprite2DRendererOptions, Unity.Tiny.Sprite2D",
             "size": {
@@ -503,7 +503,7 @@
             }
         }, {
             "$type": "Unity.Tiny.Core2D.LayerSorting, Unity.Tiny.Core2D",
-            "order": -100
+            "order": -110
         }, {
             "$type": "Unity.Tiny.Core2D.Sprite2DRendererOptions, Unity.Tiny.Sprite2D",
             "size": {
@@ -578,7 +578,6 @@
         }, {
             "$type": "Unity.Tiny.Core2D.Translation, Unity.Tiny.Core2D",
             "Value": {
-                "x": -40,
                 "y": -120
             }
         }, {
@@ -683,7 +682,7 @@
             }
         }, {
             "$type": "Unity.Tiny.Core2D.LayerSorting, Unity.Tiny.Core2D",
-            "order": -100
+            "order": -110
         }, {
             "$type": "Unity.Tiny.Core2D.Sprite2DRendererOptions, Unity.Tiny.Sprite2D",
             "size": {
@@ -1285,7 +1284,7 @@
             }
         }, {
             "$type": "Unity.Tiny.Core2D.LayerSorting, Unity.Tiny.Core2D",
-            "order": -100
+            "order": -110
         }, {
             "$type": "Unity.Tiny.Core2D.Sprite2DRendererOptions, Unity.Tiny.Sprite2D",
             "size": {
@@ -1391,7 +1390,7 @@
             }
         }, {
             "$type": "Unity.Tiny.Core2D.LayerSorting, Unity.Tiny.Core2D",
-            "order": -100
+            "order": -110
         }, {
             "$type": "Unity.Tiny.Core2D.Sprite2DRendererOptions, Unity.Tiny.Sprite2D",
             "size": {
@@ -1546,7 +1545,7 @@
             }
         }, {
             "$type": "Unity.Tiny.Core2D.LayerSorting, Unity.Tiny.Core2D",
-            "order": -100
+            "order": -110
         }, {
             "$type": "Unity.Tiny.Core2D.Sprite2DRendererOptions, Unity.Tiny.Sprite2D",
             "size": {
@@ -1606,7 +1605,7 @@
             "$type": "Unity.Tiny.Core2D.Parent, Unity.Tiny.Core2D"
         }, {
             "$type": "Unity.Tiny.Core2D.Sprite2DRenderer, Unity.Tiny.Sprite2D",
-            "sprite": "3828c6ef0b46d3516594bd1b41c9a193",
+            "sprite": "1f4a38df3672fdfa6a889feb1702cad1",
             "color": {
                 "a": 0.1960784
             },
@@ -2163,7 +2162,7 @@
             "$type": "Unity.Tiny.Core2D.Parent, Unity.Tiny.Core2D"
         }, {
             "$type": "Unity.Tiny.Core2D.Sprite2DRenderer, Unity.Tiny.Sprite2D",
-            "sprite": "3828c6ef0b46d3516594bd1b41c9a193",
+            "sprite": "1f4a38df3672fdfa6a889feb1702cad1",
             "color": {
                 "a": 1
             },
@@ -2568,6 +2567,12 @@
                 "StableTypeHash": 14135745694804319248
             }, {
                 "StableTypeHash": 3907735600522175269
+            }, {
+                "StableTypeHash": 14057264410240696723
+            }, {
+                "StableTypeHash": 17052776098661734388
+            }, {
+                "StableTypeHash": 15668420041155085448
             }]
         }]
     }, {
@@ -2813,7 +2818,7 @@
             "$type": "Unity.Tiny.Core2D.Parent, Unity.Tiny.Core2D"
         }, {
             "$type": "Unity.Tiny.Core2D.Sprite2DRenderer, Unity.Tiny.Sprite2D",
-            "sprite": "3828c6ef0b46d3516594bd1b41c9a193",
+            "sprite": "1f4a38df3672fdfa6a889feb1702cad1",
             "color": {
                 "r": 1,
                 "g": 1,

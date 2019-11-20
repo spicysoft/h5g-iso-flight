@@ -8,5 +8,7 @@ namespace IsoFlight
 		public bool Initialized;
 		public int BlockCntr;
 		public int GeneretedNum;
+		public int GeneretedTbl;
+		public int GeneretedPtn;
 	}
 }

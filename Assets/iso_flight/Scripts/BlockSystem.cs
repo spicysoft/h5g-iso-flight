@@ -39,7 +39,7 @@ namespace IsoFlight
 				info.Wpos.z -= scrollSpd * dt;
 
 				// スクロールアウト.
-				if( info.Wpos.z < -11f * UnitZ ) {
+				if( info.Wpos.z < -10f * UnitZ ) {
 					// 消す.
 					block.IsActive = false;
 					return;
@@ -49,22 +49,29 @@ namespace IsoFlight
 				block.CellPos.y = (int)(info.Wpos.y / BlockSystem.UnitY);
 				block.CellPos.z = (int)(info.Wpos.z / BlockSystem.UnitZ);
 
-				if( block.Timer > 0.3f ) {
+				if( block.Timer > 0.1f ) {
 					if( !block.ShadowChecked ) {
 						block.ShadowChecked = true;
 						int retvatl = shadowCheck( block.CellPos );
-						if( retvatl != 0 ) {
-							if( (retvatl & 1) != 0 ) {
-								NonUniformScale scl = EntityManager.GetComponentData<NonUniformScale>( block.shadowEntity );
-								scl.Value.x = 0;
-								EntityManager.SetComponentData( block.shadowEntity, scl );
-							}
-							if( (retvatl & (1 << 1)) != 0 ) {
-								NonUniformScale scl2 = EntityManager.GetComponentData<NonUniformScale>( block.shadowEntity2 );
-								scl2.Value.x = 0;
-								EntityManager.SetComponentData( block.shadowEntity2, scl2 );
-							}
+
+						NonUniformScale scl = EntityManager.GetComponentData<NonUniformScale>( block.shadowEntity );
+						if( (retvatl & 1) != 0 ) {
+							scl.Value.x = 0;
 						}
+						if( (retvatl & 1) == 0 ) {
+							scl.Value.x = 1;
+						}
+						EntityManager.SetComponentData( block.shadowEntity, scl );
+
+						NonUniformScale scl2 = EntityManager.GetComponentData<NonUniformScale>( block.shadowEntity2 );
+						if( (retvatl & (1 << 1)) != 0 ) {
+							scl2.Value.x = 0;
+						}
+						if( (retvatl & (1 << 1)) == 0 ) {
+							scl2.Value.x = 1;
+						}
+						EntityManager.SetComponentData( block.shadowEntity2, scl2 );
+
 					}
 				}
 
@@ -76,9 +83,9 @@ namespace IsoFlight
 			int retval = 0;
 			Entities.ForEach( ( ref BlockInfo block ) => {
 				if( block.CellPos.z == cell.z ) {
-					if( block.CellPos.y < cell.y )
+					if( block.CellPos.x == cell.x && block.CellPos.y < cell.y )
 						retval |= 1;
-					if( block.CellPos.x < cell.x )
+					if( block.CellPos.y == cell.y && block.CellPos.x < cell.x )
 						retval |= (1<<1);
 				}
 			} );

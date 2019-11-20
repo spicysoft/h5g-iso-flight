@@ -15,9 +15,16 @@ namespace IsoFlight
 				pcPos = info.Wpos;
 			} );
 
-			Entities.ForEach( ( ref HeightMarkInfo mark, ref WorldPosInfo info ) => {
+			Entities.ForEach( ( ref HeightMarkInfo mark, ref WorldPosInfo info, ref Sprite2DRenderer render ) => {
 				info.Wpos = pcPos;
 				info.Wpos.x = -150f;
+
+				float alpha = 0.6f - 0.005f * (pcPos.x + 150f);
+				if( alpha < 0.2f )
+					alpha = 0.2f;
+
+				render.color.a = alpha;
+
 			} );
 
 		}

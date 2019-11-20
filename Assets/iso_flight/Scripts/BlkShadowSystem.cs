@@ -34,11 +34,12 @@ namespace IsoFlight
 
 				info.Wpos.z -= scrollSpd * dt;
 
+
 				// スクロールアウト.
-				if( info.Wpos.z < -11f * BlockSystem.UnitZ ) {
+				/*if( info.Wpos.z < -10f * BlockSystem.UnitZ ) {
 					// 消す.
 					// 影は何もしない.
-				}
+				}*/
 
 			} );
 		}
