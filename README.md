@@ -10,5 +10,3 @@ Unity 2019.2.0f1
 
 Project Tiny Version 0.16.1
 
-開発中
-

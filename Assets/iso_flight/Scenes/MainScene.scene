@@ -1110,8 +1110,8 @@
         }, {
             "$type": "Unity.Tiny.Text.Text2DStyle, Unity.Tiny.Text",
             "color": {
-                "g": 0.901163,
-                "b": 0.9811321,
+                "r": 0.8962264,
+                "g": 0.169689,
                 "a": 1
             },
             "size": 36
@@ -1133,8 +1133,8 @@
                 "y": 100
             },
             "anchoredPosition": {
-                "x": -48.00001,
-                "y": -55
+                "x": -73,
+                "y": -50
             },
             "pivot": {
                 "x": 0.5,
@@ -1147,8 +1147,8 @@
         }, {
             "$type": "Unity.Tiny.Core2D.Translation, Unity.Tiny.Core2D",
             "Value": {
-                "x": -48.00001,
-                "y": 500
+                "x": -73,
+                "y": 505
             }
         }, {
             "$type": "Unity.Tiny.Core2D.Rotation, Unity.Tiny.Core2D",
@@ -1724,8 +1724,8 @@
         }, {
             "$type": "Unity.Tiny.Text.Text2DStyle, Unity.Tiny.Text",
             "color": {
-                "g": 0.901163,
-                "b": 0.9811321,
+                "r": 0.8962264,
+                "g": 0.169689,
                 "a": 1
             },
             "size": 26
@@ -1746,8 +1746,8 @@
                 "y": 100
             },
             "anchoredPosition": {
-                "x": -165,
-                "y": -55
+                "x": -190,
+                "y": -50
             },
             "pivot": {
                 "x": 0.5,
@@ -1760,8 +1760,8 @@
         }, {
             "$type": "Unity.Tiny.Core2D.Translation, Unity.Tiny.Core2D",
             "Value": {
-                "x": -165,
-                "y": 500
+                "x": -190,
+                "y": 505
             }
         }, {
             "$type": "Unity.Tiny.Core2D.Rotation, Unity.Tiny.Core2D",
@@ -2690,9 +2690,13 @@
                 "StableTypeHash": 5378123052767168278
             }, {
                 "StableTypeHash": 4259621527362548141
+            }, {
+                "StableTypeHash": 8144720687316769559
             }]
         }, {
             "$type": "IsoFlight.BtnDebTag, iso_flight"
+        }, {
+            "$type": "Unity.Entities.Disabled, Unity.Entities"
         }]
     }, {
         "Components": [{

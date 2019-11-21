@@ -26,10 +26,10 @@ namespace IsoFlight
 			1, 0, 1, 0, 1,
 		};
 		static public readonly int[] Ptn4 = {
-			0, 0, 0, 0, 0,
-			1, 1, 1, 1, 1,
-			0, 0, 0, 0, 0,
-			1, 1, 1, 1, 1,
+			0, 1, 1, 1, 1,
+			0, 0, 1, 1, 1,
+			0, 0, 0, 1, 1,
+			0, 0, 0, 0, 1,
 		};
 		static public readonly int[] Ptn5 = {
 			0, 0, 0, 0, 0,
@@ -52,8 +52,8 @@ namespace IsoFlight
 		static public readonly int[] Ptn8 = {
 			1, 1, 1, 1, 1,
 			1, 1, 1, 1, 1,
-			1, 0, 0, 0, 0,
-			1, 0, 0, 0, 0,
+			1, 0, 0, 0, 1,
+			1, 0, 0, 0, 1,
 		};
 		static public readonly int[] Ptn9 = {
 			1, 1, 1, 1, 0,
